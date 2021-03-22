@@ -24,6 +24,12 @@ Build all in parallel
 nx run-many --target=build --all --parallel
 ```
 
+See dependency graph
+
+```sh
+nx dep-graph
+```
+
 ---
 
 This project was generated using [Nx](https://nx.dev).
