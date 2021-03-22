@@ -17,6 +17,8 @@
   },
   "projects": {
     "api-todo": { "tags": [] },
-    "api-todo-interfaces": { "tags": [] }
+    "api-todo-interfaces": { "tags": [] },
+    "vue-todo": { "tags": [] },
+    "vue-todo-e2e": { "tags": [], "implicitDependencies": ["vue-todo"] }
   }
 }
