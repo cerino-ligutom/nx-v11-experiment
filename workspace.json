@@ -9,16 +9,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/api-todo",
             "main": "apps/api-todo/src/main.ts",
             "tsConfig": "apps/api-todo/tsconfig.app.json",
-            "assets": [
-              "apps/api-todo/src/assets"
-            ]
+            "assets": ["apps/api-todo/src/assets"]
           },
           "configurations": {
             "production": {
@@ -36,33 +32,44 @@
         },
         "serve": {
           "executor": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "api-todo:build"
-          }
+          "options": { "buildTarget": "api-todo:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/api-todo/**/*.ts"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/api-todo/**/*.ts"] }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/api-todo"
-          ],
+          "outputs": ["coverage/apps/api-todo"],
           "options": {
             "jestConfig": "apps/api-todo/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
+    },
+    "api-todo-interfaces": {
+      "root": "libs/api-todo-interfaces",
+      "sourceRoot": "libs/api-todo-interfaces/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api-todo-interfaces/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api-todo-interfaces"],
+          "options": {
+            "jestConfig": "libs/api-todo-interfaces/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
-  "cli": {
-    "defaultCollection": "@nrwl/node"
-  },
+  "cli": { "defaultCollection": "@nrwl/node" },
   "defaultProject": "api-todo"
 }

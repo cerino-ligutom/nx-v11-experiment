@@ -1,3 +1,3 @@
 module.exports = {
-  projects: ['<rootDir>/apps/api-todo'],
+  projects: ['<rootDir>/apps/api-todo', '<rootDir>/libs/api-todo-interfaces'],
 };
